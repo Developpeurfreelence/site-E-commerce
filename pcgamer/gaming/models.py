@@ -4,12 +4,12 @@ from django.db import models
 
 
 class Game(models.Model):
-    id = models.CharField(max_length=400)
+    product_id = models.CharField(max_length=400)
     name = models.CharField(max_length=400)
     marque = models.CharField(max_length=200)
     modele = models.CharField(max_length=200)
     gamme = models.CharField(max_length=500)
-    price_cente = models.IntegerField()
+    price_cente = models.FloatField(default=3799.94)
     image = models.CharField(max_length=500)
     image1 = models.CharField(max_length=500)
     image2 = models.CharField(max_length=500)
@@ -52,10 +52,17 @@ class Game(models.Model):
     numeric_keypad =  models.CharField(max_length=500)
     connector=  models.TextField()
     color =  models.CharField(max_length=500)
-    description =  models.TexField(max_length=10000)
+    description =  models.TextField(max_length=10000)
+    descriptions =  models.TextField(max_length=10000, default="cool")
+    descriptions1 =  models.TextField(max_length=10000, default="cool")
+    descriptions2 =  models.TextField(max_length=10000, default="cool")
+
+  
     battery =  models.CharField(max_length=500)
     cellules =  models.CharField(max_length=500)
     warrenty =  models.CharField(max_length=500)
+    os_langage =models.CharField(max_length=200, default='français')
+    titre = models.CharField(max_length=500, default="La station de travail CreatorPro X17 A12UKS-080FR a un objectif simple : vous donner suffisamment de puissance pour réaliser tous vos projets. Carte graphique NVIDIA RTX Quadro, processeur Intel Alder Lake HX, dalle Ultra HD 120 Hz...elle ne lésine pas sur les moyens pour atteindre ses objectifs.")
     
 
 
